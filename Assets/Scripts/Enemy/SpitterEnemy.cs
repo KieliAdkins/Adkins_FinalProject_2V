@@ -141,7 +141,7 @@ public class SpitterEnemy : MonoBehaviour {
             Destroy(collision.gameObject);
 
             // Removing enemy health
-            EnemyHealth.eHealth.currentHealth -= characterHitPoints;
+            EnemyController.eHealth.currentHealth -= characterHitPoints;
         }
     }
 

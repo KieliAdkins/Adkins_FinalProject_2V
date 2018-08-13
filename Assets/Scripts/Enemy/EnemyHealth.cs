@@ -6,8 +6,7 @@ using UnityEngine.UI;
 public class EnemyHealth : MonoBehaviour {
 
     // Declaring our variables
-    public static EnemyHealth eHealth;
-
+   
     // Health information
     public int startingHealth = 100;
     public int currentHealth;
@@ -19,7 +18,7 @@ public class EnemyHealth : MonoBehaviour {
     // Use this for initialization
     void Start () {
         // Setting this as the script
-        eHealth = this; 
+        EnemyController.eHealth = this; 
 
         // Set the initial health of the player.
         currentHealth = startingHealth;

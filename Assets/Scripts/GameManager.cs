@@ -6,7 +6,6 @@ public class GameManager : MonoBehaviour {
 
     // Defining our variables
     public static Score score;
-    public static List<PickUpItems> items;
     public static GameManager instance;
     public static SpiderPower spider;
     public static WaterPower water;

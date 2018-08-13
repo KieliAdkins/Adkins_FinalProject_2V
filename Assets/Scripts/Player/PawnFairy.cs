@@ -142,13 +142,13 @@ public class PawnFairy : Pawn {
         if (Input.GetKeyDown(KeyCode.E) && spiderPowerActive == true)
         {
             // Spider Power 
-            Instantiate(spiderAttack, attackSpawn.position, attackSpawn.rotation);
+            GameObject mySpiderAttack = Instantiate(spiderAttack, attackSpawn.position, attackSpawn.rotation) as GameObject;
         }
 
         if (Input.GetKeyDown(KeyCode.Q) && waterPowerActive == true)
         {
             // Water Power 
-            Instantiate(waterAttack, attackSpawn.position, attackSpawn.rotation);
+            GameObject myWaterAttack = Instantiate(waterAttack, attackSpawn.position, attackSpawn.rotation) as GameObject;
         }
     }
 
@@ -227,6 +227,6 @@ public class PawnFairy : Pawn {
     public override void Attack()
     {
         // Attack instantiation
-        Instantiate(fairyAttack, attackSpawn.position, attackSpawn.rotation);
+        GameObject myAttack = Instantiate(fairyAttack, attackSpawn.position, attackSpawn.rotation) as GameObject;
     }
 }
