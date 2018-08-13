@@ -20,7 +20,8 @@ public class PawnFairy : Pawn {
     public bool waterPowerActive = false;
 
     public GameObject fairyAttack;
-    public Transform attackSpawn;
+    public Transform rightAttackSpawn;
+    public Transform leftAttackSpawn; 
 
     public GameObject spiderAttack;
     public GameObject waterAttack; 
@@ -141,14 +142,33 @@ public class PawnFairy : Pawn {
 
         if (Input.GetKeyDown(KeyCode.E) && spiderPowerActive == true)
         {
-            // Spider Power 
-            GameObject mySpiderAttack = Instantiate(spiderAttack, attackSpawn.position, attackSpawn.rotation) as GameObject;
+            if (PlayerController.fairy.isGoingLeft == false)
+            {
+                // Attack instantiation
+                GameObject mySpiderAttack = Instantiate(spiderAttack, rightAttackSpawn.position, rightAttackSpawn.rotation) as GameObject;
+            }
+
+            if (PlayerController.fairy.isGoingLeft == true)
+            {
+                // Attack instantiation
+                GameObject mySpiderAttack = Instantiate(spiderAttack, leftAttackSpawn.position, leftAttackSpawn.rotation) as GameObject;
+            }
         }
 
         if (Input.GetKeyDown(KeyCode.Q) && waterPowerActive == true)
         {
-            // Water Power 
-            GameObject myWaterAttack = Instantiate(waterAttack, attackSpawn.position, attackSpawn.rotation) as GameObject;
+            if (PlayerController.fairy.isGoingLeft == false)
+            {
+                // Attack instantiation
+                GameObject myWaterAttack = Instantiate(waterAttack, rightAttackSpawn.position, rightAttackSpawn.rotation) as GameObject;
+            }
+
+            if (PlayerController.fairy.isGoingLeft == true)
+            {
+                // Attack instantiation
+                GameObject myWaterAttack = Instantiate(waterAttack, leftAttackSpawn.position, leftAttackSpawn.rotation) as GameObject;
+            }
+           
         }
     }
 
@@ -226,7 +246,17 @@ public class PawnFairy : Pawn {
     // Attack function
     public override void Attack()
     {
-        // Attack instantiation
-        GameObject myAttack = Instantiate(fairyAttack, attackSpawn.position, attackSpawn.rotation) as GameObject;
+        if (PlayerController.fairy.isGoingLeft == false)
+        {
+            // Attack instantiation
+            GameObject myAttack = Instantiate(fairyAttack, rightAttackSpawn.position, rightAttackSpawn.rotation) as GameObject;
+        }
+
+        if (PlayerController.fairy.isGoingLeft == true)
+        {
+            // Attack instantiation
+            GameObject myAttack = Instantiate(fairyAttack, leftAttackSpawn.position, leftAttackSpawn.rotation) as GameObject;
+        }
+       
     }
 }
